@@ -1,8 +1,9 @@
 from random import randint
 
 l = ['stone', 'paper', 'scissor']
-print("Welcome to Stone, Paper, Scissor\n");
-print("\nInstructions:\nEnter 'stone', 'paper' or 'scissor' only(Without quotes)\n")
+choice=""
+print("\nWelcome to Stone, Paper, Scissor\n");
+print("\nInstructions:\nEnter 'stone', 'paper', 'scissor' pr 'exit' only(Without quotes)\n")
 
 def play(c):
     v= randint(0, 2)
@@ -18,9 +19,12 @@ def play(c):
     else:
         print("\nYOU WON!")
 
-c = input("Enter your choice:")
-print("\nYour choice: "+c)
-if(c in l):
-    play(c.lower())
-else:
-    print("Enter Stone, Paper, Scissor only!")
+while(choice[:]!='exit'):
+	c= input("\nEnter your choice:")
+	print("\nYour choice: "+c)
+	if(c in l):
+	    play(c.lower())
+	elif(c=="exit"):
+		exit()
+	else:
+	    print("\nEnter Stone, Paper, Scissor only!")
